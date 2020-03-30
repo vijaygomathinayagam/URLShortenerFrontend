@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+.app {
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    height: 4rem;
+    padding: 1rem .5rem;
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px lightgray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.logo {
+    font-size: 2rem;
+    color: darkslategray;
+}
+
+main {
+    height: calc(100% - 4rem);
+    padding-top: 5rem;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+.small_label {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.group {
+    margin-top: 1.5rem;
+}
+
+.input_group {
+    width: 80vh;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-gap: 1rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .input_group > .field > input {
+      width: 100%;
+  } 
+  
+  .input_group.small_left_column {
+    grid-template-columns: .5fr 1.5fr;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .input_group.small_right_column {
+    grid-template-columns: 1.5fr .5fr;
   }
+  
+  .input_value {
+    padding: 0 .5rem;
+    border-radius: .25rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .small_input_value {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 3rem;
+    padding: 0 .5rem;
+    border-radius: .25rem;
+    border: 0;
+    cursor: pointer;
+    background-color: dodgerblue;
+    color: white;
+    display: block;
+}
+
+button.small_button {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+button:hover {
+    box-shadow: 0 0 3px 2px lightblue;
+}
+
+button:active {
+    box-shadow: none;
+}
+
+.field {
+    display: inline-block;
+}
+
+.field.error {
+    position: relative;
+}
+
+.field.error > input {
+    border-color: red;
+}
+
+.field.error:after {
+    content: attr(data-error-message);
+    font-size: .8rem;
+    color: red;
+    top: 110%;
+    left: 0;
+    position: absolute;
+}
+
+button[disabled] {
+    pointer-events: none;
+    opacity: .5;
 }
